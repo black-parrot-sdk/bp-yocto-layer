@@ -1,5 +1,5 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
-SRC_URI += "file://mtd.cfg"
+SRC_URI += "file://mtd.cfg file://isa.cfg"
 
 # Base our kernel configuration on qemuriscv64
 KMACHINE:blackparrot ?= "qemuriscv64"
