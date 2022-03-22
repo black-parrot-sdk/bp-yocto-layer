@@ -9,6 +9,8 @@ inherit autotools-brokensep deploy
 
 PV = "1.0+git${SRCPV}"
 
+DEPENDS = "linux-stable"
+
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 BRANCH = "master"
