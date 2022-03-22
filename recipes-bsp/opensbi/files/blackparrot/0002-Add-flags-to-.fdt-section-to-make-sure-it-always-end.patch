@@ -1,0 +1,26 @@
+From c585b3e344e455a12fefcf1fb642b213231fb68f Mon Sep 17 00:00:00 2001
+From: Collin May <mayco@uw.edu>
+Date: Mon, 21 Mar 2022 19:43:39 -0700
+Subject: [PATCH 2/2] Add flags to .fdt section to make sure it always ends up
+ being loaded
+
+---
+ firmware/fw_base.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/firmware/fw_base.S b/firmware/fw_base.S
+index dbca699..cfe7b2a 100644
+--- a/firmware/fw_base.S
++++ b/firmware/fw_base.S
+@@ -844,7 +844,7 @@ _clear_prev:
+ 	ret
+ 
+ #ifdef FW_FDT_PATH
+-	.section .fdt
++	.section .fdt, "a", %progbits
+ 	.align 4
+ 	.globl fw_fdt_bin
+ fw_fdt_bin:
+-- 
+2.16.5
+

@@ -1,0 +1,22 @@
+From 431d821ec3cd9ba306a1f91320175c1589726597 Mon Sep 17 00:00:00 2001
+From: Collin May <mayco@uw.edu>
+Date: Mon, 21 Mar 2022 15:15:16 -0700
+Subject: [PATCH] Comment out device tree object file
+
+---
+ platform/blackparrot/objects.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/platform/blackparrot/objects.mk b/platform/blackparrot/objects.mk
+index 0321456..f70be01 100644
+--- a/platform/blackparrot/objects.mk
++++ b/platform/blackparrot/objects.mk
+@@ -12,4 +12,4 @@ platform-objs-y += platform.o
+ # the device tree compiled file should be specified here. The device tree
+ # source file be in the form <dt file name>.dts
+ #
+-platform-objs-y += blackparrot.o
++#platform-objs-y += blackparrot.o
+-- 
+2.16.5
+

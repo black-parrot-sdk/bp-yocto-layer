@@ -1,0 +1,42 @@
+From 3446e6291b540693941e6290f0c275809f65ff77 Mon Sep 17 00:00:00 2001
+From: Collin May <mayco@uw.edu>
+Date: Mon, 21 Mar 2022 15:46:14 -0700
+Subject: [PATCH 2/3] Add SBI earlycon to boot args for BlackParrot device
+ trees
+
+---
+ arch/riscv/boot/dts/blackparrot/bp-1hart.dts | 3 +++
+ arch/riscv/boot/dts/blackparrot/bp-4hart.dts | 3 +++
+ 2 files changed, 6 insertions(+)
+
+diff --git a/arch/riscv/boot/dts/blackparrot/bp-1hart.dts b/arch/riscv/boot/dts/blackparrot/bp-1hart.dts
+index 10d25cf25656..d78f6a91e277 100644
+--- a/arch/riscv/boot/dts/blackparrot/bp-1hart.dts
++++ b/arch/riscv/boot/dts/blackparrot/bp-1hart.dts
+@@ -6,6 +6,9 @@
+ 	#size-cells = <2>;
+ 	compatible = "ucbbar,spike-bare-dev";
+ 	model = "ucbbar,spike-bare";
++        chosen {
++                bootargs = "console=hvc0 earlycon=sbi";
++        };
+ 	cpus {
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+diff --git a/arch/riscv/boot/dts/blackparrot/bp-4hart.dts b/arch/riscv/boot/dts/blackparrot/bp-4hart.dts
+index 05d830675afb..32c8cc3fde97 100644
+--- a/arch/riscv/boot/dts/blackparrot/bp-4hart.dts
++++ b/arch/riscv/boot/dts/blackparrot/bp-4hart.dts
+@@ -6,6 +6,9 @@
+ 	#size-cells = <2>;
+ 	compatible = "ucbbar,spike-bare-dev";
+ 	model = "ucbbar,spike-bare";
++        chosen {
++                bootargs = "console=hvc0 earlycon=sbi";
++        };
+ 	cpus {
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+-- 
+2.16.5
+
