@@ -23,7 +23,7 @@ SRC_URI = "git://github.com/black-parrot-sdk/opensbi.git;protocol=https;branch=$
 S = "${WORKDIR}/git"
 
 EXTRA_OEMAKE += "PLATFORM=${RISCV_SBI_PLAT} I=${D} INSTALL_LIB_PATH=lib FW_PIC=n"
-EXTRA_OEMAKE += "PLATFORM_RISCV_ISA=rv64imafd"
+EXTRA_OEMAKE += "PLATFORM_RISCV_ISA=rv64imafdc"
 EXTRA_OEMAKE += "PLATFORM_HART_COUNT=1"
 # If RISCV_SBI_PAYLOAD is set then include it as a payload
 EXTRA_OEMAKE:append = " ${@riscv_get_extra_oemake_image(d)}"
